@@ -204,16 +204,32 @@ h6,
 }
 
 
-/*** Header ***/
+
+
+/* Set a maximum height for the carousel */
+#header-carousel .carousel-item {
+  max-height: 830px; /* Adjust as necessary to fit screen */
+  overflow: hidden;
+}
+
+#header-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust the carousel caption to fit within the reduced height */
 .carousel-caption {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%);
-    z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align caption content to the left */
+  padding-left: 20px; /* Add padding to prevent text from touching edge */
+  background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%);
+  z-index: 1;
 }
 
 .carousel-control-prev,
@@ -233,7 +249,7 @@ h6,
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
-        min-height: 450px;
+        min-height: 200px; /* Adjust for smaller screens */
     }
     
     #header-carousel .carousel-item img {
@@ -246,6 +262,7 @@ h6,
 
 .page-header {
     background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%), url(../img/carousel-2.jpg) center center no-repeat;
+    min-height: 200px; /* Set a smaller height as desired */
     background-size: cover;
 }
 
