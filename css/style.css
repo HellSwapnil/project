@@ -208,7 +208,7 @@ h6,
 
 /* Set a maximum height for the carousel */
 #header-carousel .carousel-item {
-  max-height: 830px; /* Adjust as necessary to fit screen */
+  max-height: 850px; /* Adjust as necessary to fit screen */
   overflow: hidden;
 }
 
