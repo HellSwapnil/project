@@ -114,20 +114,22 @@ h6,
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
-}
+    height: 100px; /* Double the height */
+  }
+
 
 .navbar .navbar-brand {
     position: relative;
     padding-right: 50px;
-    height: 75px;
+    height: 80px;
     display: flex;
     align-items: center;
-    background: var(--primary);
 }
 
 .navbar .navbar-brand .brand-logo {
-  height: 60px; /* Adjust size as needed */
+  height: 80px; /* Adjusted logo height to match new navbar height */
   margin-right: 20px; /* Space between logo and text */
+  margin-left: 70px;
 }
 
 .navbar .navbar-brand::after {
@@ -138,16 +140,17 @@ h6,
     top: 0;
     right: -25px;
     transform: skewX(-30deg);
-    background-color: var(--primary);
+    
 }
 
 .navbar .navbar-nav .nav-link {
     margin-right: 35px;
-    padding: 20px 0;
+    padding: 40px 0; /* Adjust padding to center links in new height */
+    font-size: 18px;
     color: var(--dark);
     font-size: 18px;
     font-weight: 1000;
-    outline: none;
+    outline: none;   
 }
 
 .navbar .dropdown-menu .dropdown-item {
