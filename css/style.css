@@ -204,11 +204,9 @@ h6,
 }
 
 
-
-
 /* Set a maximum height for the carousel */
 #header-carousel .carousel-item {
-  max-height: 850px; /* Adjust as necessary to fit screen */
+  max-height: 800px; /* Adjust as necessary to fit screen */
   overflow: hidden;
 }
 
@@ -261,7 +259,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%), url(../img/carousel-2.jpg) center center no-repeat;
+    background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%), url("https://media.istockphoto.com/id/1422090283/photo/real-life-young-female-aircraft-engineer-apprentice-at-work.jpg?s=2048x2048&w=is&k=20&c=Jt83EzgQmT98XyvKDKVaX-eTC3cSvDkMn9a8A7Fz7tU=") center center no-repeat;
     min-height: 200px; /* Set a smaller height as desired */
     background-size: cover;
 }
@@ -592,12 +590,20 @@ h6,
 .form-title {
   text-align: center;
   margin-bottom: 0.5rem;
+  font-size: 10rem;
 }
 
 .appointment {
   background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(../img/carousel-2.jpg) center center no-repeat;
   background-size: cover;
-  padding-top: 10%
+  padding-top: 10px;
+
+}
+
+.appointment-section{
+  margin-top:100px;
+  margin-top: 150px; /* Increase as needed for more space */
+
 }
 
 #toastContainer {
@@ -610,12 +616,12 @@ h6,
 }
 
 
- 
 /*Clients*/ 
 
 .clients-title {
   text-align: center;
   margin-bottom: 0.5rem;
+  margin-top: 100px;
 }
 
 .clients-title {
@@ -623,42 +629,56 @@ h6,
   justify-content: center;
 }
 
-@keyframes scroll{
-  0%{
-      transform: translateX(0);
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  100%{
-      transform: translateX(calc(-250px * 7));
+  100% {
+    transform: translateX(calc(-200px * 22)); /* Adjust to match logo width */
   }
-  
 }
+
 
 .slider-container {
   padding: 0 20px;
-  padding-left: 10%;   /* Adjust left and right padding as needed */
+  padding-left: 10%;   /* Adjust left and right padding as needed */;
   padding-right: 10%;
+  padding-top:30px;
+  padding-bottom: 150px;
   overflow: hidden;
 }
 
-.slider{
+.slider {
   height: 100px;
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 100% ;
+  width: 100%;
 }
 
-.slider  .slide-track{
-  animation: scroll 20s linear infinite;
+.slider .slide {
+  margin-right: 30px; /* Adjust the space between logos */
+}
+
+/* Ensure all logos are the same size */
+.slider .slide img {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintains aspect ratio */
+  max-height: 100px; /* Ensures logos don’t exceed container height */
+}
+
+
+.slider .slide-track {
+  animation: scroll 30s linear infinite; /* Adjust animation duration as needed */
   display: flex;
-  width:calc(250px * 14);
+  width: calc(250px * 22); /* Adjust to 22 logos */
 }
 
-.slider  .slide-track{
+.slider .slide-track {
   height: 100px;
   width: 250px;
 }
-/*Clients end*/ 
+/*Clients end*/
 
 
 
@@ -1357,13 +1377,13 @@ h6,
 .footer {
   width: 100%;
   background-color: #001B49; /* Adjust color as needed */
-  padding: 20px 0; /* Add padding for better spacing */
+  padding: 10px 0; /* Add padding for better spacing */
 }
 
 .footer-container {
-  max-width: 100%; /* Adjust max width as needed */
+  max-width: 200%; /* Adjust max width as needed */
   margin: 0 auto; /* Center content within the footer */
-  padding: 0 15px; /* Add some padding for mobile */
+  padding: 0 10px; /* Add some padding for mobile */
 }
 
 .footer .btn.btn-link {
@@ -1391,3 +1411,48 @@ h6,
     box-shadow: none;
 }
 
+/* Adjust width and styling for the Quick Links section */
+.footer .col-lg-3:nth-child(2) {
+  max-width: 220px;    /* Set the desired width */
+  margin-left: 0px;    /* Adjust to prevent pushing content down */
+  margin-right: 30px;  /* Adjust spacing if needed */
+}
+
+/* Increase text size and color for Quick Links heading */
+.footer .col-lg-3:nth-child(2) h5 {
+  font-size: 18px;     /* Increase heading size */
+  color: #FFFFFF;      /* Ensure text color is visible */
+}
+
+/* Adjust font size and styling for Quick Links links */
+.footer .col-lg-3:nth-child(2) .btn-link {
+  font-size: 16px;     /* Adjust font size of Quick Links */
+  color: #B0B9AE;
+  font-weight: bold;   /* Make text bold if desired */
+}
+
+/* Container styling for the Our Office section */
+.footer .col-lg-3:first-child {
+  max-width: 600px;
+  margin-right: 40px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Styling for the email line to align icon and text */
+.footer .col-lg-3:first-child .contact-email {
+  display: flex;      /* Aligns icon and text on the same line */
+  align-items: center; /* Vertically centers the icon with the text */
+  gap: 0px;            /* Adds spacing between icon and text */
+  font-size: 16px;     /* Adjust font size if needed */
+  color: #FFFFFF;      /* Text color */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Optional: Style for the email icon */
+.footer .col-lg-3:first-child .contact-email .icon {
+  font-size: 18px;     /* Icon size */
+  color: #FFFFFF;      /* Icon color */
+}
