@@ -23,6 +23,15 @@
     }
   });
 
+  // Prevent navbar dropdown issues on resize
+  $(document).ready(function () {
+    $(".navbar-toggler").on("click", function () {
+      $(".navbar-collapse").toggleClass("show"); // Toggle visibility
+      $(this).toggleClass("collapsed"); // Add/remove collapsed class for button icon
+    });
+  });
+  
+
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -52,6 +61,7 @@
     $("#video").attr("src", $videoSrc);
   });
 
+  
   // Facts counter
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
@@ -111,14 +121,67 @@
     },
   });
 
-  // Smooth scroll to appointment section
-  $('#getQuoteButton').on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({
-        scrollTop: $('#appointment-section').offset().top
-    }, 1000, 'easeInOutExpo');
-});
+  //logo
+  $(document).ready(function () {
+    const logos = [
+      "Logo 1.png",
+      "Logo 2.png",
+      "Logo 3.png",
+      "Logo 4.png",
+      "Logo 5.png",
+      "Logo 6.png",
+      "Logo 7.png",
+      "Logo 8.png",
+      "Logo 9.png",
+      "Logo 10.png",
+      "Logo 11.png",
+      "Logo 12.png",
+      "Logo 13.png",
+      "Logo 14.png",
+      "Logo 15.png",
+      "Logo 16.png",
+      "Logo 17.png",
+      "Logo 18.png",
+      "Logo 19.png",
+      "Logo 20.png",
+      "Logo 21.png",
+      "Logo 22.png",
+    ];
 
+    const $logoTrack = $("#logoTrack");
+
+    // Add logos to the slider
+    $.each(logos, function (index, logo) {
+      const $slide = $("<div>")
+        .addClass("slide")
+        .html(
+          `<img src="img/Logos/${logo}" height="100" width="250" alt="${logo}" />`
+        );
+      $logoTrack.append($slide);
+    });
+
+    // Duplicate logos for continuous scrolling
+    $.each(logos, function (index, logo) {
+      const $slide = $("<div>")
+        .addClass("slide")
+        .html(
+          `<img src="img/Logos/${logo}" height="100" width="250" alt="${logo}" />`
+        );
+      $logoTrack.append($slide);
+    });
+  });
+
+  // Smooth scroll to appointment section
+  $("#getQuoteButton").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: $("#appointment-section").offset().top,
+      },
+      1000,
+      "easeInOutExpo"
+    );
+  });
 
   // Toast Notification on Appointment Button Click
   $("#appointmentButton").on("click", function () {
